@@ -1,11 +1,11 @@
 export const portfolioData = {
-  name: "Aarav Sharma",
-  title: "Machine Learning Engineering Student",
+  name: "P Rakshith Reddy",
+  title: "Machine Learning Engineering ",
   branch: "Computer Science Engineering",
-  college: "Blue Ridge Institute of Technology",
-  email: "aarav.sharma@example.com",
-  github: "https://github.com/aarav-sharma",
-  linkedin: "https://www.linkedin.com/in/aarav-sharma",
+  college: "Jain University",
+  email: "rakshith488654@gmail.com",
+  github: "https://github.com/PRakshithReddy17",
+  linkedin: "https://www.linkedin.com/in/p-rakshith-reddy-09b932322/",
   resumeLink: "#",
   tagline: "Building data-driven products with practical AI, full-stack engineering, and clean design.",
   about:
