@@ -1,26 +1,50 @@
 import { useState } from "react";
-import { Mail, MapPin, Send, CheckCircle } from "lucide-react";
+import { Mail, MapPin, Send, CheckCircle, Loader2, AlertCircle } from "lucide-react";
 import SectionHeading from "./SectionHeading";
 import SocialLinks from "./SocialLinks";
 
+// ✅ Paste your Web3Forms access key below (get it free at https://web3forms.com)
+const WEB3FORMS_KEY = "a6f0ab52-e661-483e-9daa-c6368b42bf7c";
+
 function Contact({ data, socialLinks }) {
-  const [form, setForm] = useState({ name: "", subject: "", message: "" });
-  const [sent, setSent] = useState(false);
+  const [form, setForm] = useState({ name: "", email: "", subject: "", message: "" });
+  const [status, setStatus] = useState("idle"); // idle | sending | success | error
 
   const handleChange = (e) => {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    const mailtoLink = `mailto:${data.email}?subject=${encodeURIComponent(
-      form.subject || "Portfolio Contact"
-    )}&body=${encodeURIComponent(
-      `Hi Rakshith,\n\nMy name is ${form.name}.\n\n${form.message}\n`
-    )}`;
-    window.open(mailtoLink, "_blank");
-    setSent(true);
-    setTimeout(() => setSent(false), 4000);
+    setStatus("sending");
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          access_key: WEB3FORMS_KEY,
+          name: form.name,
+          email: form.email,
+          subject: form.subject,
+          message: form.message,
+        }),
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        setStatus("success");
+        setForm({ name: "", email: "", subject: "", message: "" });
+        setTimeout(() => setStatus("idle"), 4000);
+      } else {
+        setStatus("error");
+        setTimeout(() => setStatus("idle"), 4000);
+      }
+    } catch {
+      setStatus("error");
+      setTimeout(() => setStatus("idle"), 4000);
+    }
   };
 
   return (
@@ -89,6 +113,19 @@ function Contact({ data, socialLinks }) {
             </label>
 
             <label className="flex flex-col gap-1.5">
+              <span className="text-sm font-medium text-slate-700 dark:text-slate-300">Email</span>
+              <input
+                type="email"
+                name="email"
+                required
+                value={form.email}
+                onChange={handleChange}
+                placeholder="your@email.com"
+                className="rounded-xl border border-slate-300 bg-slate-50 px-4 py-3 text-sm text-slate-900 outline-none transition focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 dark:border-slate-700 dark:bg-slate-800 dark:text-white dark:focus:border-primary-400"
+              />
+            </label>
+
+            <label className="flex flex-col gap-1.5">
               <span className="text-sm font-medium text-slate-700 dark:text-slate-300">Subject</span>
               <input
                 type="text"
@@ -116,14 +153,28 @@ function Contact({ data, socialLinks }) {
 
             <button
               type="submit"
-              className="mt-1 inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-primary-600 to-sky-500 px-6 py-3 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:shadow-lg hover:shadow-primary-500/25"
+              disabled={status === "sending"}
+              className="mt-1 inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-primary-600 to-sky-500 px-6 py-3 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:shadow-lg hover:shadow-primary-500/25 disabled:opacity-60 disabled:hover:translate-y-0"
             >
-              {sent ? (
+              {status === "sending" && (
+                <>
+                  <Loader2 size={18} className="animate-spin" />
+                  Sending...
+                </>
+              )}
+              {status === "success" && (
                 <>
                   <CheckCircle size={18} />
-                  Email Client Opened!
+                  Message Sent!
                 </>
-              ) : (
+              )}
+              {status === "error" && (
+                <>
+                  <AlertCircle size={18} />
+                  Failed — Try Again
+                </>
+              )}
+              {status === "idle" && (
                 <>
                   <Send size={18} />
                   Send Message
