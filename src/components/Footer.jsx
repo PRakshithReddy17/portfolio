@@ -12,7 +12,7 @@ function Footer({ data }) {
           <a href={data.linkedin} target="_blank" rel="noreferrer" className="transition hover:text-primary-600 dark:hover:text-primary-300">
             LinkedIn
           </a>
-          <a href={`mailto:${data.email}`} className="transition hover:text-primary-600 dark:hover:text-primary-300">
+          <a href={`https://mail.google.com/mail/?view=cm&to=${data.email}`} target="_blank" rel="noreferrer" className="transition hover:text-primary-600 dark:hover:text-primary-300">
             Email
           </a>
         </div>

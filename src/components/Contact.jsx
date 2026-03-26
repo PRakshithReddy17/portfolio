@@ -65,7 +65,9 @@ function Contact({ data, socialLinks }) {
                 <div>
                   <p className="font-semibold text-slate-900 dark:text-white">Email</p>
                   <a
-                    href={`mailto:${data.email}`}
+                    href={`https://mail.google.com/mail/?view=cm&to=${data.email}`}
+                    target="_blank"
+                    rel="noreferrer"
                     className="mt-1 inline-block text-slate-600 transition hover:text-primary-600 dark:text-slate-300 dark:hover:text-primary-300"
                   >
                     {data.email}

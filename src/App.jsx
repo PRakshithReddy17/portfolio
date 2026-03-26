@@ -28,7 +28,7 @@ function App() {
     () => [
       { label: "GitHub", href: portfolioData.github },
       { label: "LinkedIn", href: portfolioData.linkedin },
-      { label: "Email", href: `mailto:${portfolioData.email}` },
+      { label: "Email", href: `https://mail.google.com/mail/?view=cm&to=${portfolioData.email}` },
     ],
     []
   );
