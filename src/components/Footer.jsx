@@ -5,7 +5,12 @@ function Footer({ data }) {
         <p>
           © {new Date().getFullYear()} {data.name}. Built for an engineering student portfolio.
         </p>
-        <div className="flex items-center gap-4">
+        <div className="flex flex-wrap items-center justify-center gap-4">
+          {data.liveSiteUrl ? (
+            <a href={data.liveSiteUrl} target="_blank" rel="noreferrer" className="transition hover:text-primary-600 dark:hover:text-primary-300">
+              Live site
+            </a>
+          ) : null}
           <a href={data.github} target="_blank" rel="noreferrer" className="transition hover:text-primary-600 dark:hover:text-primary-300">
             GitHub
           </a>
