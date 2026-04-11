@@ -7,7 +7,8 @@ export const portfolioData = {
   github: "https://github.com/PRakshithReddy17",
   linkedin: "https://www.linkedin.com/in/p-rakshith-reddy-09b932322/",
   liveSiteUrl: "https://portfolio-three-rose-45.vercel.app",
-  resumeLink: "#",
+  resumeLink: "/final_resume%20(1).pdf",
+  resumeDownloadName: "final_resume (1).pdf",
   tagline: "Building data-driven products with practical AI, full-stack engineering, and clean design.",
   about:
     "I am an engineering student focused on machine learning, software development, and solving real-world problems with scalable systems. I enjoy blending model experimentation with product thinking, and I am currently exploring deep learning, MLOps, and intelligent web applications.",

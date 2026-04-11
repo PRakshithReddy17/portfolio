@@ -30,7 +30,7 @@ function Hero({ data, socialLinks }) {
             </a>
             <a
               href={data.resumeLink}
-              download
+              download={data.resumeDownloadName}
               className="inline-flex items-center gap-2 rounded-full border border-slate-300 bg-white px-6 py-3 text-sm font-semibold text-slate-700 transition hover:-translate-y-0.5 hover:border-primary-500 hover:text-primary-600 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-100 dark:hover:border-primary-400 dark:hover:text-primary-300"
             >
               Download Resume
