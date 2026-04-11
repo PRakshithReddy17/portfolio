@@ -12,7 +12,7 @@ export const portfolioData = {
   about:
     "I am an engineering student focused on machine learning, software development, and solving real-world problems with scalable systems. I enjoy blending model experimentation with product thinking, and I am currently exploring deep learning, MLOps, and intelligent web applications.",
   stats: [
-    { label: "Projects Built", value: "07+" },
+    { label: "Projects Built", value: "06+" },
     { label: "Core Skills", value: "17+" },
     { label: "Focus Areas", value: "ML • Web • Data" },
   ],
@@ -81,14 +81,6 @@ export const portfolioData = {
         "End-to-end RAG pipeline for research PDFs: chunking, Sentence Transformer embeddings, FAISS retrieval, and grounded answers via local Ollama and the Phi-3 model.",
       technologies: ["Python", "FAISS", "Sentence Transformers", "Ollama", "LangChain"],
       github: "https://github.com/PRakshithReddy17/rag-research-assistant",
-    },
-    {
-      title: "Engineering Student Portfolio",
-      description:
-        "This responsive single-page site: project cards, skills, dark mode, and contact—built with React and Tailwind and deployed on Vercel.",
-      technologies: ["React", "Vite", "Tailwind CSS", "JavaScript"],
-      github: "https://github.com/PRakshithReddy17/portfolio",
-      demo: "https://portfolio-three-rose-45.vercel.app",
     },
   ],
 };
