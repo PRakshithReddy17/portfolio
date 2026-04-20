@@ -5,6 +5,7 @@
 \usepackage[T1]{fontenc}
 \usepackage[margin=0.5in]{geometry}
 \usepackage[hidelinks]{hyperref}
+\hypersetup{colorlinks=true, linkcolor=blue, urlcolor=blue}
 \usepackage{enumitem}
 \usepackage{xcolor}
 
@@ -30,7 +31,7 @@
 % Header
 \begin{center}
 {\Large\textbf{P Rakshith Reddy}}\\
-Bangalore, India $|$ \href{mailto:rakshith488654@gmail.com}{rakshith488654@gmail.com} $|$ +91-8762-210883\\
+Bangalore, India $|$ \href{mailto:rakshith488654@gmail.com}{rakshith488654@gmail.com} $|$ +91 8762210883\\
 \href{https://www.linkedin.com/in/p-rakshith-reddy-09b932322/}{LinkedIn/p-rakshith-reddy} $|$ \href{https://github.com/PRakshithReddy17}{GitHub/PRakshithReddy17} $|$ \href{https://portfolio-three-rose-45.vercel.app}{portfolio-three-rose-45.vercel.app}
 \end{center}
 
@@ -42,8 +43,9 @@ Engineering student in Computer Science (AI \& ML) at Jain University, specializ
 
 % Education
 \sectionheader{Education}
-\textbf{Jain University} \hfill Bangalore, India\\
-\textbf{Bachelor of Technology, Computer Science in AI \& Machine Learning} \hfill Expected: Aug 2026\\
+\textbf{Jain University, Bangalore, India} \hfill Expected: Aug 2028\\
+\textbf{Bachelor of Technology, Computer Science (AI \& Machine Learning)}\\
+\textbf{CGPA:} 8.79 / 10.0\\
 Relevant Coursework: Machine Learning, NLP, Computer Vision, Data Structures, Algorithms, Web Development
 
 % Technical Skills
@@ -56,47 +58,45 @@ Relevant Coursework: Machine Learning, NLP, Computer Vision, Data Structures, Al
 % Projects
 \sectionheader{Projects}
 
-\textbf{Multilingual Toxic Filter} [\href{https://github.com/PRakshithReddy17/multilingual-toxic-filter}{Link}] \hfill 2025\\
-\textit{Full-stack NLP Application}
-\begin{itemize}
-    \item Engineered toxic-language detection across 100+ languages using Hugging Face transformers with 94\% F1 score
-    \item Built FastAPI backend with language detection and REST endpoints, integrated React.js frontend
-    \item Deployed to production; handles 1000+ inference requests monthly
-\end{itemize}
-
 \textbf{AI Resume Analyzer + Job Matcher} [\href{https://github.com/PRakshithReddy17/Resume_Analyzer}{Link} \textbar\ \href{https://resumeanalyzer-vwluxtrbq4gdse2m7nvqrs.streamlit.app/}{Demo}] \hfill 2024--2025\\
 \textit{Streamlit Web Application}
 \begin{itemize}
-    \item Developed TF-IDF and skill-extraction algorithm for resume-job matching with 91\% accuracy
-    \item Created interactive Streamlit dashboard with match visualizations (scatter plots, histograms)
-    \item Application live with 500+ users; surfaces missing skills and improvement recommendations
+    \item Developed NLP-based resume-job matching system using TF-IDF vectorization and cosine similarity
+    \item Designed hybrid scoring algorithm (60\% skill match, 40\% similarity) achieving up to 91\% match accuracy
+    \item Built interactive Streamlit dashboard with real-time match scoring and skill-gap insights (~1--2 sec latency)
 \end{itemize}
 
-\textbf{AI Career Counselor Chatbot} [\href{https://github.com/PRakshithReddy17/ai-career-counselor-chatbot}{Link} \textbar\ \href{https://ai-career-counselor-chatbot.vercel.app}{Demo}] \hfill 2024\\
+\textbf{Multilingual Toxic Filter} [\href{https://github.com/PRakshithReddy17/multilingual-toxic-filter}{Link}] \hfill 2025\\
+\textit{Full-stack NLP Application}
+\begin{itemize}
+    \item Built multilingual toxic comment detection system using pretrained BERT-based (Toxic-BERT) transformer model, enabling classification across 100+ languages
+    \item Engineered FastAPI-based inference pipeline achieving ~100--300 ms latency per request for real-time moderation
+    \item Implemented adversarial input handling including obfuscation detection and Unicode script validation to prevent bypass attacks
+\end{itemize}
+
+\textbf{AI Career Counselor Chatbot} [\href{https://github.com/PRakshithReddy17/ai-career-counselor-chatbot}{Link} \textbar\ \href{https://ai-career-counselor-chatbot.vercel.app}{Demo}] \hfill 2025\\
 \textit{Full-stack AI Application}
 \begin{itemize}
-    \item Built ChatGPT-like chat interface in Next.js with FastAPI backend for career guidance
-    \item Integrated LLM APIs for personalized career path recommendations and advice
-    \item Deployed on Vercel; 300+ active users
+    \item Developed full-stack AI chatbot using Next.js and FastAPI for personalized career guidance
+    \item Integrated GPT-3.5 Turbo via OpenRouter API with prompt-engineered system role for structured responses
+    \item Designed stateless architecture with dynamic prompt construction for context-aware replies
+    \item Achieved response latency of ~1--3 seconds; deployed on Vercel/Render with real-time interaction
 \end{itemize}
 
-\textbf{AI Research Summarizer} [\href{https://github.com/PRakshithReddy17/ai-research-summarizer}{Link} \textbar\ \href{https://ai-research-summarizer-self.vercel.app}{Demo}] \hfill 2024\\
+\textbf{AI Research Summarizer} [\href{https://github.com/PRakshithReddy17/ai-research-summarizer}{Link} \textbar\ \href{https://ai-research-summarizer-self.vercel.app}{Demo}] \hfill 2025--2026\\
 \textit{RAG Pipeline with Vector Indexing}
 \begin{itemize}
-    \item Engineered retrieval-augmented generation (RAG) system for research paper analysis
-    \item Implemented FAISS vector indexing with Hugging Face embeddings for semantic search
-    \item Integrated arXiv API; deployed full-stack app with 200+ monthly active users
+    \item Built RAG-based research summarization system using FAISS and Sentence-Transformers embeddings
+    \item Implemented chunking (~1000 chars, 200 overlap) and top-k retrieval (k=5) for relevant context extraction
+    \item Optimized performance using lightweight MiniLM embeddings and FAISS similarity search
+    \item Integrated local LLM (phi3:mini) achieving ~2--5 sec response time for PDF-based queries
 \end{itemize}
 
 % Certifications
 \sectionheader{Certifications}
-\begin{itemize}
-    \item \href{https://github.com/PRakshithReddy17/portfolio/raw/main/certificates/Introduction%20to%20ai%20%28IBM%29%20.pdf}{ML with Python (IBM)}
-    \item \href{https://github.com/PRakshithReddy17/portfolio/raw/main/certificates/ml%20in%20python.pdf}{Machine Learning in Python}
-    \item \href{https://github.com/PRakshithReddy17/portfolio/raw/main/certificates/etl.pdf}{Data Engineering (ETL)}
-    \item \href{https://github.com/PRakshithReddy17/portfolio/raw/main/certificates/os.pdf}{Operating Systems}
-    \item \href{https://github.com/PRakshithReddy17/portfolio/raw/main/certificates/quantum%20mechanics.pdf}{Quantum Mechanics}
-\end{itemize}
+\href{https://coursera.org/verify/7M3WRAJNI9TW}{ML with Python (IBM)} \quad $-$ \quad \href{https://coursera.org/verify/OM9A7NEWQT8I}{Machine Learning in Python}\\[3pt]
+\href{https://coursera.org/verify/Q866X9O2C7FT}{Data Engineering (ETL)} \quad $-$ \quad \href{https://coursera.org/verify/42DE6OZQR2XY}{Operating Systems}\\[3pt]
+\href{https://coursera.org/verify/FX2ZKGRVPJOA}{Quantum Mechanics}
 
 % Languages & Interests
 \sectionheader{Languages \& Interests}
