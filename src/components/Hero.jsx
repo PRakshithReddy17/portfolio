@@ -28,14 +28,21 @@ function Hero({ data, socialLinks }) {
               View Projects
               <ArrowRight size={18} />
             </a>
-            <a
-              href="/resume.pdf"
-              download="Rakshith_Resume.pdf"
+            <button
+              onClick={() => {
+                const link = document.createElement('a');
+                link.href = '/resume.pdf';
+                link.download = 'Rakshith_Resume.pdf';
+                link.style.display = 'none';
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+              }}
               className="inline-flex items-center gap-2 rounded-full border-2 border-primary-600 px-6 py-3 text-sm font-semibold text-primary-600 transition hover:-translate-y-0.5 hover:bg-primary-50 dark:border-primary-400 dark:text-primary-400 dark:hover:bg-slate-900"
             >
               Download Resume
               <ArrowRight size={18} />
-            </a>
+            </button>
           </div>
 
           <SocialLinks links={socialLinks} className="mt-8" />
